@@ -26,12 +26,12 @@ Song.create(title: "test song 18", genre: "test genre 4")
 Song.create(title: "test song 19", genre: "test genre 4")
 Song.create(title: "test song 20", genre: "test genre 4")
 
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Book.title)
+User.create(username: Faker::Internet.username)
+User.create(username: Faker::Internet.username)
+User.create(username: Faker::Internet.username)
+User.create(username: Faker::Internet.username)
+User.create(username: Faker::Internet.username)
+User.create(username: Faker::Internet.username)
 
 
 Favorite.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
