@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2020_05_01_211606) do
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "genre"
+    t.string "audio"
+    t.string "image"
+    t.string "artist"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
