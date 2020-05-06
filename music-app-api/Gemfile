@@ -42,3 +42,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for generating quick seed data to test models and relationships
 gem 'faker'
+
+# for hiding API key and Client ID
+gem 'dotenv-rails', :groups => [:development, :test]
+
+# for making requests to the Spotify API
+gem 'rspotify'
+
+# for making requests 
+gem 'httparty'

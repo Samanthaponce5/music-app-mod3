@@ -1,4 +1,5 @@
 class Api::V1::SongsController < ApplicationController
+
     def index 
         @songs = Song.all 
         render json: @songs 
@@ -43,5 +44,7 @@ class Api::V1::SongsController < ApplicationController
 
     def song_params
         params.require(:song).permit!
-    end
+
+
+
 end
