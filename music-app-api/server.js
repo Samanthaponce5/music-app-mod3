@@ -150,20 +150,15 @@ function removeFavorite(favoriteId){
 
 //deletes a favorite from a database
 function deleteFavorite(favoriteId){
-  fetch(`http://localhost:3000/api/v1/favorites/${favoriteId}`, {
+  fetch(`http://localhost:3000/api/v1/delete/?q=${favoriteId}`, {
+    // mode: 'no-cors',
     method: 'POST',
     headers: {
       'accept': 'application/json',
       'content-type': 'application/json'
     },
-    body: JSON.string
-
-    })
-    
-    .then(response => response.json())
-  // ? use next line to do something meaningful with the data
-    .then(json => console.log(json))
-  }
+  })
+}
 //creates a new favorite in the db ( also checks if the song exists and makes it if it doesn't)
 function createFavorite(songObj){
   console.log(songObj)
@@ -174,7 +169,8 @@ function createFavorite(songObj){
     method: 'POST',
     headers: {
       'accept': 'application/json',
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      
     },
     body: JSON.stringify(songObj)
     })
@@ -186,7 +182,8 @@ function createFavorite(songObj){
 function addFavorite(favoriteObj){
   let div = document.createElement("div")
   let li = document.createElement("li")
-  li.textContent= favoriteObj.song_name
+  let uri = favoriteObj.uri.split(":")
+  li.innerHTML = `${favoriteObj.song_name} <iframe src="https://open.spotify.com/embed/track/${uri[2]}" width="300" height="50" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> <button class="remove-btn">X</button> `
   div.dataset.id = favoriteObj.id
   favoritesList.append(div)
   div.append(li)
@@ -202,8 +199,9 @@ function renderFavorites(favorites){ //?receiving an array of favorite objects
   favorites.forEach(favorite => {
     let div = document.createElement("div")
     let li = document.createElement("li")
-    console.log(favorite)
-    li.innerHTML = `${favorite.song_name} <iframe src="https://open.spotify.com/embed/track/3IvMYBE7A3c7to1aEcfFJk" width="300" height="50" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> <button class="remove-btn">X</button>`
+    let uri = favorite.uri.split(":")
+    console.log(uri[2])
+    li.innerHTML = `${favorite.song_name} <iframe src="https://open.spotify.com/embed/track/${uri[2]}" width="300" height="50" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> <button class="remove-btn">X</button>`
     // li.textContent = favorite.song_name
     div.dataset.id = favorite.id
     favoritesList.append(div)
