@@ -202,6 +202,7 @@ function renderFavorites(favorites){ //?receiving an array of favorite objects
   favorites.forEach(favorite => {
     let div = document.createElement("div")
     let li = document.createElement("li")
+    console.log(favorite)
     li.innerHTML = `${favorite.song_name} <iframe src="https://open.spotify.com/embed/track/3IvMYBE7A3c7to1aEcfFJk" width="300" height="50" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> <button class="remove-btn">X</button>`
     // li.textContent = favorite.song_name
     div.dataset.id = favorite.id
