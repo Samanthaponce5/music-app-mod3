@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get '/artist', to: 'api#artist'
       get '/albums', to: 'api#albums'
       get '/tracks', to: 'api#tracks'
+      post '/delete', to: 'favorites#delete'
     end
   end
 
