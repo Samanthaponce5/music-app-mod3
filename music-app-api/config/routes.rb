@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :users
       resources :songs
+      resources :favorites
       get '/artist', to: 'api#artist'
       get '/albums', to: 'api#albums'
       get '/tracks', to: 'api#tracks'

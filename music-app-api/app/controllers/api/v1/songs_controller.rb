@@ -6,6 +6,7 @@ class Api::V1::SongsController < ApplicationController
     end
 
     def show 
+        # byebug
         @song = Song.find(params[:id])
         render json: @song 
     end
@@ -44,7 +45,7 @@ class Api::V1::SongsController < ApplicationController
 
     def song_params
         params.require(:song).permit!
-
+    end
 
 
 end
