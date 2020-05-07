@@ -18,7 +18,7 @@ class Api::V1::FavoritesController < ApplicationController
 
     def delete
         byebug
-        Ravorite.destroy(params[:id])        
+        Favorite.destroy(params[:id])        
     end
 
     private
