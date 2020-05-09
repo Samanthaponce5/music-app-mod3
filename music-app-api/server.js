@@ -191,15 +191,11 @@ function addFavorite(favoriteObj){
 
 //renders the favorites to the page
 function renderFavorites(favorites){ //?receiving an array of favorite objects
-  console.log(favorites)
-  favoritesList.innerHTML=""
-  favoritesHeader.innerHTML=""
-  favoritesHeader.textContent = "Favorites:"
-  favoritesContainer.prepend(favoritesHeader)
+ 
   favorites.forEach(favorite => {
     let div = document.createElement("div")
     let li = document.createElement("li")
-    let uri = favorite.uri.split(":")
+    let uri = favorites.uri.split(":")
     console.log(uri[2])
     li.innerHTML = `${favorite.song_name} <iframe src="https://open.spotify.com/embed/track/${uri[2]}" width="300" height="50" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> <button class="remove-btn">X</button>`
     // li.textContent = favorite.song_name

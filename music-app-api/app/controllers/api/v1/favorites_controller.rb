@@ -17,7 +17,7 @@ class Api::V1::FavoritesController < ApplicationController
     end
 
     def delete
-        byebug
+        # byebug
         Favorite.destroy(params[:q])        
     end
 
